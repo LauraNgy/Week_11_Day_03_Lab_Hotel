@@ -35,4 +35,12 @@ public class Bedroom {
     public double getRate() {
         return this.nightlyRate;
     }
+
+    public void occupy() {
+        this.occupied = true;
+    }
+
+    public void vacate() {
+        this.occupied = false;
+    }
 }

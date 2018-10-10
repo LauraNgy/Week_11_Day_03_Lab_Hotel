@@ -35,4 +35,16 @@ public class BedroomTest {
     public void hasNightlyRate() {
         assertEquals(100.05, bedroom.getRate(), 0.05);
     }
+
+    @Test
+    public void occupy() {
+        bedroom.occupy();
+        assertEquals(true, bedroom.isOccupied());
+    }
+
+    @Test
+    public void vacate() {
+        bedroom.vacate();
+        assertEquals(false, bedroom.isOccupied());
+    }
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Hotel {
 
@@ -38,8 +39,9 @@ public class Hotel {
     }
 
     public String bedroomCheckIn(Bedroom bedroom, Guest guest) {
-        if (bedroom.getCapacity() > bedroom.getGuests().size()) {
+        if (bedroom.getCapacity() > bedroom.getGuests().size() && !bedroom.isOccupied()) {
             bedroom.getGuests().add(guest);
+            bedroom.occupy();
             return "Guest added";
         }
             return "Not able to check in";
@@ -64,6 +66,7 @@ public class Hotel {
     public String bedroomCheckOut(Bedroom bedroom, Guest guest) {
         if (bedroom.getGuests().contains(guest)) {
             bedroom.getGuests().remove(guest);
+            bedroom.vacate();
             return "Guest removed";
         }
         return "Attempting to check out a guest that has not been checked in here";
@@ -83,5 +86,24 @@ public class Hotel {
             return "Guest removed";
         }
         return "Attempting to check out a guest that has not been checked in here";
+    }
+
+    public Booking bookRoom(Bedroom bedroom, int nights) {
+        Booking booking = new Booking(bedroom, nights);
+        return booking;
+    }
+
+    public double getBill(Booking booking) {
+        return booking.getBedroom().getRate() * booking.getNights();
+    }
+
+    public ArrayList<Bedroom> getVacantBedrooms() {
+        ArrayList<Bedroom> vacantRooms = new ArrayList<>();
+        for ( int i = 0; i < bedrooms.size(); i++) {
+            if (!bedrooms.get(i).isOccupied()) {
+                vacantRooms.add(bedrooms.get(i));
+            }
+        }
+        return vacantRooms;
     }
 }
