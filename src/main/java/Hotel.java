@@ -13,5 +13,15 @@ public class Hotel {
     }
 
 
+    public ArrayList getBedrooms() {
+        return this.bedrooms;
+    }
 
+    public ArrayList getConfRooms() {
+        return this.confRooms;
+    }
+
+    public ArrayList getDineRooms() {
+        return this.dineRooms;
+    }
 }
