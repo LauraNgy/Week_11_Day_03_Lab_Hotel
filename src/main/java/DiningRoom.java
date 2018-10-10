@@ -19,7 +19,7 @@ public class DiningRoom {
         return this.capacity;
     }
 
-    public int getGuests() {
-        return this.guests.size();
+    public ArrayList<Guest> getGuests() {
+        return this.guests;
     }
 }

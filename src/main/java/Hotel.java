@@ -36,4 +36,28 @@ public class Hotel {
     public void addDineRoom(DiningRoom diningRoom) {
         this.dineRooms.add(diningRoom);
     }
+
+    public String bedroomCheckIn(Bedroom bedroom, Guest guest) {
+        if (bedroom.getCapacity() > bedroom.getGuests().size()) {
+            bedroom.getGuests().add(guest);
+            return "Guest added";
+        }
+            return "Not able to check in";
+    }
+
+    public String diningRoomCheckIn(DiningRoom diningRoom, Guest guest) {
+        if (diningRoom.getCapacity() > diningRoom.getGuests().size()) {
+            diningRoom.getGuests().add(guest);
+            return "Guest added";
+        }
+        return "Not able to check in";
+    }
+
+    public String confRoomCheckIn(ConferenceRoom confRoom, Guest guest) {
+        if (confRoom.getCapacity() > confRoom.getGuests().size()) {
+            confRoom.getGuests().add(guest);
+            return "Guest added";
+        }
+        return "Not able to check in";
+    }
 }

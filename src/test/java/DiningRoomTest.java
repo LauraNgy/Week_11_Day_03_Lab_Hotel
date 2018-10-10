@@ -23,6 +23,6 @@ public class DiningRoomTest {
 
     @Test
     public void hasGuests(){
-        assertEquals(0, diningRoom.getGuests());
+        assertEquals(0, diningRoom.getGuests().size());
     }
 }

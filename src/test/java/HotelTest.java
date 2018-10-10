@@ -9,6 +9,7 @@ public class HotelTest {
     Bedroom bedroom;
     ConferenceRoom confRoom;
     DiningRoom diningRoom;
+    Guest guest;
 
     @Before
     public void before() {
@@ -38,17 +39,16 @@ public class HotelTest {
         assertEquals(2, hotel.getDineRooms().size());
     }
 
-//    @Test
-//    public void canCheckIn() {
-//        hotel.checkIn(bedroom, guest);
-//        assertEquals(1, hotel.getBedrooms().);
-//
-//    }
-
     @Test
-    public void cannotCheckIn() {
-
+    public void canCheckIn() {
+        assertEquals("Guest added", hotel.bedroomCheckIn(bedroom, guest));
+        assertEquals(1, bedroom.getGuests().size());
+        assertEquals("Guest added", hotel.diningRoomCheckIn(diningRoom, guest));
+        assertEquals(1, diningRoom.getGuests().size());
+        assertEquals("Guest added", hotel.confRoomCheckIn(confRoom, guest));
+        assertEquals(1, confRoom.getGuests().size());
     }
+
     @Test
     public void canCheckOut() {
 
