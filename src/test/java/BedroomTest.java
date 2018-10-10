@@ -25,4 +25,9 @@ public class BedroomTest {
     public void hasGuests() {
         assertEquals(0, bedroom.getGuests().size());
     }
+
+    @Test
+    public void isOccupied() {
+        assertEquals(false, bedroom.isOccupied());
+    }
 }

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.BitSet;
 
 public class Bedroom {
 
@@ -25,5 +24,9 @@ public class Bedroom {
 
     public ArrayList getGuests() {
         return this.guests;
+    }
+
+    public boolean isOccupied() {
+        return this.occupied;
     }
 }
