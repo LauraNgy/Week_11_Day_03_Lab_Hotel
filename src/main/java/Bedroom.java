@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.BitSet;
 
 public class Bedroom {
 
@@ -16,5 +17,13 @@ public class Bedroom {
 
     public String getName() {
         return this.name;
+    }
+
+    public int getCapacity() {
+        return this.capacity;
+    }
+
+    public ArrayList getGuests() {
+        return this.guests;
     }
 }

@@ -15,4 +15,14 @@ public class BedroomTest {
     public void hasName() {
         assertEquals("Pentmoon suite", bedroom.getName());
     }
+
+    @Test
+    public void hasCapacity() {
+        assertEquals(2, bedroom.getCapacity());
+    }
+
+    @Test
+    public void hasGuests() {
+        assertEquals(0, bedroom.getGuests().size());
+    }
 }
