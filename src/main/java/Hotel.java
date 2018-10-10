@@ -24,4 +24,16 @@ public class Hotel {
     public ArrayList getDineRooms() {
         return this.dineRooms;
     }
+
+    public void addBedroom(Bedroom bedroom) {
+        this.bedrooms.add(bedroom);
+    }
+
+    public void addConferenceRoom(ConferenceRoom confRoom) {
+        this.confRooms.add(confRoom);
+    }
+
+    public void addDineRoom(DiningRoom diningRoom) {
+        this.dineRooms.add(diningRoom);
+    }
 }
