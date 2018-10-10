@@ -6,12 +6,14 @@ public class Bedroom {
     private int capacity;
     private ArrayList<Guest> guests;
     private boolean occupied;
+    private double nightlyRate;
 
-    public Bedroom(String name, int capacity) {
+    public Bedroom(String name, int capacity, double nightlyRate) {
         this.name = name;
         this.capacity = capacity;
         this.guests = new ArrayList<>();
         this.occupied = false;
+        this.nightlyRate = nightlyRate;
     }
 
     public String getName() {
@@ -28,5 +30,9 @@ public class Bedroom {
 
     public boolean isOccupied() {
         return this.occupied;
+    }
+
+    public double getRate() {
+        return this.nightlyRate;
     }
 }
