@@ -39,7 +39,7 @@ public class Hotel {
     }
 
     public String bedroomCheckIn(Bedroom bedroom, Guest guest) {
-        if (bedroom.getCapacity() > bedroom.getGuests().size() && !bedroom.isOccupied()) {
+        if (bedroom.getCapacity() > guest.getNumberOfGuests() && !bedroom.isOccupied()) {
             bedroom.getGuests().add(guest);
             bedroom.occupy();
             return "Guest added";

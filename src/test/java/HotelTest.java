@@ -11,6 +11,7 @@ public class HotelTest {
     ConferenceRoom confRoom;
     DiningRoom diningRoom;
     Guest guest;
+    Guest guest3;
     Booking booking;
 
     @Before
@@ -25,11 +26,15 @@ public class HotelTest {
         hotel.addConferenceRoom(confRoom);
         hotel.addDineRoom(diningRoom);
         booking = hotel.bookRoom(bedroom, 3);
+        guest = new Guest();
+        guest3 = new Guest();
+        guest3.amend(3);
+
     }
 
     @Test
     public void hasRooms() {
-        assertEquals(1, hotel.getBedrooms().size());
+        assertEquals(2, hotel.getBedrooms().size());
         assertEquals(1, hotel.getConfRooms().size());
         assertEquals(1, hotel.getDineRooms().size());
     }
@@ -37,7 +42,7 @@ public class HotelTest {
     @Test
     public void addRooms() {
         hotel.addBedroom(bedroom);
-        assertEquals(2, hotel.getBedrooms().size());
+        assertEquals(3, hotel.getBedrooms().size());
         hotel.addConferenceRoom(confRoom);
         assertEquals(2, hotel.getConfRooms().size());
         hotel.addDineRoom(diningRoom);
@@ -59,6 +64,7 @@ public class HotelTest {
     public void cannotCheckIn() {
         hotel.bedroomCheckIn(bedroom, guest);
         assertEquals("Not able to check in", hotel.bedroomCheckIn(bedroom, guest));
+        assertEquals("Not able to check in", hotel.bedroomCheckIn(otherBedroom, guest3));
     }
 
     @Test
