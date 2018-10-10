@@ -60,4 +60,28 @@ public class Hotel {
         }
         return "Not able to check in";
     }
+
+    public String bedroomCheckOut(Bedroom bedroom, Guest guest) {
+        if (bedroom.getGuests().contains(guest)) {
+            bedroom.getGuests().remove(guest);
+            return "Guest removed";
+        }
+        return "Attempting to check out a guest that has not been checked in here";
+    }
+
+    public String diningRoomCheckOut(DiningRoom diningRoom, Guest guest) {
+        if (diningRoom.getGuests().contains(guest)) {
+            diningRoom.getGuests().remove(guest);
+            return "Guest removed";
+        }
+        return "Attempting to check out a guest that has not been checked in here";
+    }
+
+    public String confRoomCheckOut(ConferenceRoom confRoom, Guest guest) {
+        if (confRoom.getGuests().contains(guest)) {
+            confRoom.getGuests().remove(guest);
+            return "Guest removed";
+        }
+        return "Attempting to check out a guest that has not been checked in here";
+    }
 }
